@@ -51,7 +51,7 @@ int main()
     outfile<<"Array Size,Time\n";
     int arr[60000];
     int size=1000;
-        while(size<=15000)
+        while(size<=20000)
     {
         initialise(arr,size);
         clock_t start,end;

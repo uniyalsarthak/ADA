@@ -26,7 +26,7 @@ void initialise(int a[], int size)
 int main()
 {
     ofstream outfile("sorting_time.csv");
-    outfile<<"Array Size,Time (microseconds)\n";
+    outfile<<"Array Size,Time\n";
     int arr[60000];
     int size=1000;
         while(size<=10000)
