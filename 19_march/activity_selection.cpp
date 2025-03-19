@@ -40,6 +40,6 @@ void activitySelection(vector<vector<int>> &activities)
 
 int main() 
 {
-    vector<vector<int>> activities={{1, 3}, {2, 5}, {3, 4}, {6, 8}, {5, 7}, {9,19}, {7,10}, {12,14}};
+    vector<vector<int>> activities={{1, 2}, {2, 5}, {3, 4}, {6, 8}, {5, 7}, {9,19}, {7,10}, {12,14}};
     activitySelection(activities);
 }
