@@ -117,6 +117,7 @@ Helps in designing minimum-cost road/railway connections between cities.
 Time Complexity:O(Elogv)
 
 ## Multistage Graph Algorithm
+
 A multistage graph is a directed weighted graph where nodes are divided into multiple stages, and the goal is to find the shortest (or longest) path from a source node in the first stage to a destination node in the last stage. This problem is efficiently solved using Dynamic Programming (DP).
 
 Time Complexity:O(V^2)
