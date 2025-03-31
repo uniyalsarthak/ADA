@@ -6,7 +6,8 @@ Bubble sort is a sorting algorithm that repeatedly steps through the list to be 
 
 It can be useful for sorting small datasets or in scenarios where simplicity of implementation is more important than speed.
 
-![alt text](image.png)
+![Screenshot 2025-03-31 115225](https://github.com/user-attachments/assets/abf8f9dc-4519-4eef-8ffa-503ce72aed7c)
+
 
 Time Complexity:
 Best Case: O(n) - This occurs when the list is already sorted.
