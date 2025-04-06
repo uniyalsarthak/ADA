@@ -6,8 +6,23 @@ Bubble sort is a sorting algorithm that repeatedly steps through the list to be 
 
 It can be useful for sorting small datasets or in scenarios where simplicity of implementation is more important than speed.
 
-![Screenshot 2025-03-31 115225](https://github.com/user-attachments/assets/abf8f9dc-4519-4eef-8ffa-503ce72aed7c)
+Steps:
 
+1.Go through the array, one value at a time, starting from the first element.
+
+2.For each value, compare it with the value next to it in the array.
+
+3.If the current value is greater than the next one, swap them so that the higher value moves toward the end.
+
+4.Continue this process until you reach the end of the array.
+
+5.Repeat the entire process for as many times as there are elements in the array.
+
+6.After each full pass, the largest unsorted value will have moved to its correct position at the end.
+
+7.If in any pass, no values are swapped, stop the process early as the array is already sorted.
+
+8.At the end of all passes, the array will be sorted in ascending order.
 
 Time Complexity:
 Best Case: O(n) - This occurs when the list is already sorted.
@@ -21,12 +36,40 @@ Selection Sort is a simple comparison-based sorting algorithm that works by repe
 
 Can be used in cases where the number of swaps should be minimized (compared to Bubble Sort, which swaps more frequently).
 
+Steps:
+
+1.Start with the first element of the array and assume it is the smallest.
+
+2.Compare this element with all the other elements in the unsorted part of the array.
+
+3.If you find a smaller element, update the position of the minimum element.
+
+4.After checking all elements, swap the smallest found element with the first element.
+
+5.Move to the next position and repeat the same process for the remaining unsorted part of the array.
+
+6.Continue this until the entire array is sorted in ascending order.
+
 Its best case, average case and worst case time complexity is O(n^2) as even if the array is already sorted, selection sort still scans and selects the minimum in each pass.
 
 ## Merge Sort
 Merge Sort is a divide and conquer sorting algorithm that works by dividing an array into smaller subarrays, sorting them, and then merging them back together. 
 
 Preferred when stable sorting (preserving the order of equal elements) is required. Used in sorting large datasets due to its efficient O(n log n) time complexity.
+
+Steps:
+
+1.Divide the array into two halves from the middle.
+
+2.Recursively divide each half into smaller halves until each sub-array has only one element.
+
+3.Once you reach single-element arrays, start merging them back together.
+
+4.While merging, compare elements from the two halves and place the smaller one into the new array.
+
+5.Continue merging all sub-arrays in sorted order until the entire array is combined.
+
+6.After all merges are done, the array will be fully sorted in ascending order.
 
 Its best case, average case and worst case time complexity is O(n*logn) as even if the array is already sorted, Merge Sort still divides and merges the elements.
 
@@ -35,15 +78,61 @@ Quick Sort is a divide and conquer sorting algorithm that works by selecting a "
 
 Commonly used in in-place sorting due to its O(1) space complexity.
 
+Steps:
+
+1.Choose a pivot element from the array (usually the first, last, or middle element).
+
+2.Rearrange the elements in the array so that all elements smaller than the pivot go to the left of it, and all greater elements go to the right — this is called partitioning.
+
+3.Place the pivot in its correct sorted position (between the two partitions).
+
+4.Now, take the left sub-array (elements less than the pivot) and apply the same steps recursively.
+
+5.Do the same for the right sub-array (elements greater than the pivot).
+
+6.Continue this process until all sub-arrays have only one element — at that point, the entire array will be sorted.
+
 Best Case: O(n log n), Average Case: O(n log n), Worst Case: O(n²)
 
 ## Magic Sqaure
 A magic square is a square grid of distinct numbers arranged in such a way that the sum of numbers in each row, each column, and both main diagonals is the same. This constant sum is called the magic constant or magic sum.
 
+Steps:
+
+1.Start with an empty 3×3 grid.
+
+2.Place the number 1 in the middle column of the first row.
+
+3.Move up and to the right to place the next number.
+
+4.If this move takes you out of the grid, wrap around to the opposite side (top to bottom or right to left).
+
+5.If the cell is already filled, move one step down instead and place the number there.
+
+6.Repeat this process until all numbers from 1 to 9 are placed.
+
 Time complexity:O(n^2)
 
 ## 1D Array Peak element
 A peak element in a 1D array is an element that is greater than or equal to its neighbors.
+
+Steps:
+
+1.Start with two pointers: low = 0 and high = n - 1.
+
+2.While low is less than or equal to high, find the middle index: mid = (low + high) // 2.
+
+3.Check if the middle element is a peak:
+
+It's a peak if it's greater than or equal to both its neighbors.
+
+Be careful with boundary cases: for the first and last elements, only one neighbor exists.
+
+4.If the left neighbor is greater than arr[mid], then a peak must exist in the left half, so move high = mid - 1.
+
+5.Else if the right neighbor is greater, move to the right half by setting low = mid + 1.
+
+6.Continue this process until a peak is found.
 
 Time Complexity:O(log n) (Efficient Approach)
 
@@ -56,6 +145,21 @@ Computer Graphics & Image Processing: Used for transformations, scaling, and rot
 
 Machine Learning & AI: Core operation in neural networks, deep learning, and data transformations.
 
+Steps:
+
+1.Take two matrices: A of size m × n and B of size n × p.
+
+2.The result matrix C will be of size m × p.
+
+3.To compute each element C[i][j], take the i-th row from matrix A and the j-th column from matrix B.
+
+4.Multiply the corresponding elements and add them up:
+C[i][j] = A[i][0] * B[0][j] + A[i][1] * B[1][j] + ... + A[i][n-1] * B[n-1][j]
+
+5.Repeat this for all rows of A and all columns of B using nested loops.
+
+6.The result matrix C will now contain the product of matrices A and B.
+
 Time Complexity:O(m*n*p)
 
 ## Min and Max element in an Array using Divide and conquer
@@ -65,12 +169,44 @@ O(n) time), we can use the Divide and Conquer approach to optimize it.
 Used in:
 Game Theory: Minimax algorithm in decision-making and AI (e.g., Chess, Tic-Tac-Toe) & Computational Geometry: Finding bounding box (smallest and largest points) in a dataset.
 
+Steps:
+
+1.If the array has only one element, both min and max are that element.
+
+2.If the array has two elements, compare them and assign the smaller to min and the larger to max.
+
+3.If the array has more than two elements, divide the array into two halves.
+
+4.Recursively find the min and max in the left half and the right half.
+
+5.Then, compare the two minimums to get the overall min, and compare the two maximums to get the overall max.
+
+6.Return the final min and max values after combining the results from both halves.
+
 The iterative approach takes 2(n-1) comparisons in the worst case.
 The divide-and-conquer approach takes only ~3n/2 comparisons, making it more efficient.
 
 ## Cosine Similarity
 Cosine Similarity is a measure of similarity between two non-zero vectors in an inner product space.
 Used in:Text Analysis & NLP: Used to compare the similarity of documents & Image Recognition: Measures similarity between feature vectors of images.
+
+Steps:
+
+1.Take two vectors (lists of numbers), A and B.
+
+2.Compute the dot product of A and B by multiplying corresponding elements and adding them up.
+
+3.Find the magnitude of each vector by taking the square root of the sum of squares of its elements.
+
+4.Divide the dot product by the product of the magnitudes.
+
+5.The result will be between -1 and 1, where:
+
+1 means the vectors are identical in direction
+
+0 means they are completely different (90° apart)
+
+-1 means they are exactly opposite in direction
 
 Time Complexity:O(n)
 
@@ -84,6 +220,20 @@ Time Complexity:O(n^3)
 ## Strassen Matrix Multiplication
 Strassen’s algorithm divides each matrix into four submatrices and reduces the number of multiplications from 8 to 7
 
+Steps:
+
+1.Given two square matrices A and B of size n × n (where n is a power of 2), divide them into four submatrices of size n/2 × n/2.
+
+2.Instead of doing 8 multiplications (as in standard method), Strassen's algorithm cleverly uses only 7 multiplications and some additions/subtractions.
+
+3.The seven products are calculated as combinations of submatrices.
+
+4.Using these 7 intermediate products, the final result matrix C is reconstructed using additions and subtractions.
+
+5.This method reduces the time complexity from O(n³) to approximately O(n^2.81).
+
+6.The process is applied recursively on smaller submatrices until a base size (like 1×1) is reached.
+
 Time Complexity:O(n^2.81)
 
 ## Activity Selection
@@ -91,10 +241,38 @@ The Activity Selection Problem is a greedy algorithm problem where we need to se
 
 Sorting takes O(n log n), and selecting activities takes O(n), so total time is O(n log n).
 
+Steps:
+
+1.First, sort all the activities based on their ending times in ascending order.
+
+2.Select the first activity (which ends earliest) as it leaves the most time for the rest.
+
+3.Then, go through the sorted list and for each activity:
+
+4.If its start time is after or equal to the finish time of the last selected activity, select it.
+
+5.Keep updating the end time reference to the current selected activity.
+
+6.Repeat this until you've checked all activities.
+
 Used in CPU scheduling, conference room scheduling, and event planning to maximize task completion.
 
 ## Dijkstra algorithm
 Dijkstra’s Algorithm is a greedy algorithm used to find the shortest path from a single source vertex to all other vertices in a weighted graph (with non-negative edge weights). It is widely used in network routing, mapping applications, and AI pathfinding.
+
+Steps:
+
+1.Start from a source node and assign it a distance of 0. All other nodes get an initial distance of infinity.
+
+2.Use a visited set to keep track of nodes whose shortest distance from the source is already found.
+
+3.At each step, select the unvisited node with the smallest known distance.
+
+4.Update the distances of its neighbors by checking if a shorter path is found through the current node.
+
+5.Once a node’s neighbors are updated, mark it as visited (finalized).
+
+6.Repeat this process until all nodes have been visited or the smallest distance among unvisited nodes is infinity.
 
 Time Complexity:O((V+E)logV)
 
@@ -103,12 +281,36 @@ The Greedy Approach is used specifically for the Fractional Knapsack Problem, wh
 
 Used for selecting stocks or projects with the highest return under budget constraints & Optimizing storage space for maximum efficiency.
 
+Steps:
+
+1.First, calculate the value-to-weight ratio for each item.
+
+2.Sort all the items in descending order of value/weight ratio.
+
+3.Start filling the knapsack by picking the item with the highest ratio first.
+
+4.If the full item fits in the remaining capacity, take it completely.
+
+5.If it doesn't fit, take the fraction of it that fits exactly into the knapsack.
+
+6.Repeat this process until the knapsack is full or all items are considered.
+
 Time Complexity:O(nlogn)
 
 ## Kruskal Algorithm
 Kruskal’s Algorithm is a greedy algorithm used to find the Minimum Spanning Tree (MST) of a graph. It selects edges in increasing order of weight while ensuring that no cycles are formed.
 
 Used in designing efficient networks like roads, electrical grids, and telecommunications.
+
+Steps:
+
+1.Kruskal’s algorithm works by sorting all edges in increasing order of weight.
+
+2.Then it adds edges one by one to the MST, picking the smallest edge that does not form a cycle.
+
+3.To check for cycles efficiently, the algorithm uses the Disjoint Set Union (DSU) or Union-Find data structure.
+
+4.The process continues until the MST contains (V - 1) edges, where V is the number of vertices.
 
 Time Complexity:O(Elogv)
 
@@ -117,16 +319,51 @@ Prim’s Algorithm is a greedy algorithm used to find the Minimum Spanning Tree 
 
 Helps in designing minimum-cost road/railway connections between cities.
 
+Steps:
+
+1.Start with any vertex and mark it as part of the MST.
+
+2.Look at all the edges that connect the vertices in the MST to those outside it.
+
+3.Choose the edge with the smallest weight that connects to a vertex not yet in the MST.
+
+4.Add that edge and the new vertex to the MST.
+
+5.Repeat the process until all vertices are included in the MST.
+
+6.This ensures that at each step, the MST grows optimally without forming any cycles.
+
 Time Complexity:O(Elogv)
 
 ## Multistage Graph Algorithm
 
 A multistage graph is a directed weighted graph where nodes are divided into multiple stages, and the goal is to find the shortest (or longest) path from a source node in the first stage to a destination node in the last stage. This problem is efficiently solved using Dynamic Programming (DP).
 
+Steps:
+
+1.The algorithm works by calculating the shortest cost from each node to the destination, starting from the last stage and moving backward (i.e., using backward dynamic programming).
+
+2.For each node, we check all outgoing edges and select the one with the minimum cost to the destination.
+
+3.Finally, we get the shortest path from the source to destination by following the choices made.
+
 Time Complexity:O(V^2)
 
 ## All Pair Shortest Path Algorithm
 The All-Pairs Shortest Path (APSP) problem involves finding the shortest path between every pair of nodes in a weighted graph. This is useful in various real-world applications such as network routing, transportation planning, and urban navigation systems.
+
+Steps:
+
+1.It initializes a distance matrix A[i][j], where A[i][j] is the weight of the edge from vertex i to j, or infinity if no edge exists.
+
+2.It then considers each vertex k as an intermediate point, and checks whether the path from i to j can be made shorter by going through k.
+
+3.For every pair of vertices (i, j), it updates:
+A[i][j] = min(A[i][j], dist[i][k] + A[k][j])
+
+4.This is done for all vertices k = 0 to V-1, where V is the number of vertices.
+
+5.After the algorithm finishes, A[i][j] contains the shortest distance from vertex i to j.
 
 Time Complexity:O(n^3)
 
