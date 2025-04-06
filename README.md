@@ -41,7 +41,7 @@ Can be used in cases where the number of swaps should be minimized (compared to 
 Steps:
 
 1.Start with the first element of the array and assume it is the smallest.
-
+ 
 2.Compare this element with all the other elements in the unsorted part of the array.
 
 3.If you find a smaller element, update the position of the minimum element.
@@ -53,6 +53,8 @@ Steps:
 6.Continue this until the entire array is sorted in ascending order.
 
 Its best case, average case and worst case time complexity is O(n^2) as even if the array is already sorted, selection sort still scans and selects the minimum in each pass.
+
+<img src="https://github.com/user-attachments/assets/5dcd1341-7a1f-4c2d-bf6c-44d180c5425a" width="400">
 
 ## Merge Sort
 Merge Sort is a divide and conquer sorting algorithm that works by dividing an array into smaller subarrays, sorting them, and then merging them back together. 
@@ -75,6 +77,8 @@ Steps:
 
 Its best case, average case and worst case time complexity is O(n*logn) as even if the array is already sorted, Merge Sort still divides and merges the elements.
 
+<img src="https://github.com/user-attachments/assets/5376c2eb-b888-4285-9a49-3b2f287e60e1" width="400">
+
 ## Quick Sort
 Quick Sort is a divide and conquer sorting algorithm that works by selecting a "pivot" element, partitioning the array into two subarrays based on the pivot, and then recursively sorting the subarrays.
 
@@ -95,6 +99,8 @@ Steps:
 6.Continue this process until all sub-arrays have only one element — at that point, the entire array will be sorted.
 
 Best Case: O(n log n), Average Case: O(n log n), Worst Case: O(n²)
+
+<img src="https://github.com/user-attachments/assets/b5ace277-e779-44ee-bbec-376585deeefe" width="400">
 
 ## Magic Sqaure
 A magic square is a square grid of distinct numbers arranged in such a way that the sum of numbers in each row, each column, and both main diagonals is the same. This constant sum is called the magic constant or magic sum.
