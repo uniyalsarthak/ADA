@@ -30,6 +30,7 @@ Best Case: O(n) - This occurs when the list is already sorted.
 Average Case: O(n^2) - On average, bubble sort will make n^2/2 comparisons
 
 Worst Case: O(n^2) - This happens when the list is sorted in reverse order
+
 <img src="https://github.com/user-attachments/assets/7806bc58-14cb-4b6f-84c3-77b68abc88c6" width="300">
 ## Selection Sort
 Selection Sort is a simple comparison-based sorting algorithm that works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and swapping it with the first element of the unsorted portion.
