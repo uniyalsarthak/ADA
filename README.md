@@ -488,3 +488,21 @@ The goal is to assign colors to the vertices of a graph such that no two adjacen
 6.If stuck, backtrack and try another color.
 
 Time Complexity: In the worst case, it is O(mⁿ), where n is the number of vertices and m is the number of colors. But backtracking prunes many invalid colorings early.
+
+## Sum of Subsets
+
+The goal is to find all subsets of a given set of integers that sum to a specific target value m.
+
+Steps:
+
+1.	Initialize a solution vector x[] with all values as 0 (indicating selection).
+   
+2.	Start from the first item and try to include it in the subset (x[k] = 1).
+   
+3.	If the current sum = target sum, print the subset and backtrack.
+
+4.	If the sum exceeds the target or no items are left, backtrack.
+   
+5.	Else, explore the next item both by including and excluding it recursively.
+
+Worst Case Time Complexity: O(2^n): Because all possible subsets (each element has 2 choices: include or exclude) are explored.
