@@ -375,4 +375,116 @@ A[i][j] = min(A[i][j], dist[i][k] + A[k][j])
 
 Time Complexity:O(n^3)
 
+## 0/1 Knapsack Using Dynamic Programming
 
+It involves choosing items with given weights and values to include in a knapsack (bag) with a weight capacity limit, in such a way that you maximize the total value, but you cannot take a fraction of an item — you either take it (1) or leave it (0).
+ 
+Steps:
+
+1.Create a DP table dp[n+1][W+1] where n is the number of items and W is the maximum weight capacity of the knapsack. Each entry dp[i][w] represents the maximum value that can be obtained using the first i items and capacity w.
+
+2.Initialize the table: Set the first row and the first column to 0. This means that if there are 0 items or capacity is 0, the maximum value is 0.
+
+3.Iterate over each item (i = 1 to n) and each capacity (w = 1 to W).
+
+4.For each item i and weight w, check:
+
+If the current item can be included (weight[i-1] <= w), then:
+
+dp[i][w] = max(value[i-1] + dp[i-1][w - weight[i-1]], dp[i-1][w])
+
+(Choose max of including or excluding the item)
+
+Else:
+
+dp[i][w] = dp[i-1][w] (Item too heavy, can't include)
+
+5.Fill the table row by row, updating maximum values based on the above logic.
+
+6.The final answer will be in dp[n][W], which gives the maximum value for n items and capacity W.
+
+Time complexity: O(n * W)
+
+## Matrix Chain Multiplication
+
+Given a sequence of matrices A1, A2, ..., An, you want to compute the product A1 × A2 × ... × An. Determine the best way (order) to fully parenthesize the multiplication so that the total number of scalar multiplications is minimized.
+
+Steps:
+
+1.Create a DP table dp[i][j] to store the minimum number of multiplications needed to compute Ai...Aj.
+
+2.Initialize dp[i][i] = 0 for all i (cost of multiplying one matrix is 0).
+
+3.For chains of length 2 to n, compute the cost for every possible split position k between i and j.
+
+4.Use the formula:
+dp[i][j] = min(dp[i][k] + dp[k+1][j] + p[i-1]*p[k]*p[j]) where k is from i to j-1
+
+5.The final answer will be in dp[1][n-1]
+
+Time Complexity: O(n³)
+
+## Longest Common Subsequence
+
+Given two strings X and Y, find the length (and optionally the actual sequence) of the longest subsequence present in both strings
+
+Steps:
+
+1.Create a table dp of size (m+1) x (n+1) and initialize the first row and column with 0s.
+
+2.Loop over each character of X and Y. For each i and j:
+
+If X[i-1] == Y[j-1] → they match, so: dp[i][j] = dp[i-1][j-1] + 1
+
+Else: dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+
+3.The value at dp[m][n] will be the length of the LCS.
+
+Time Complexity: O(m × n), where m and n are lengths of the two strings.
+
+##  N-Queens problem
+
+The goal is to place N queens on an N x N chessboard such that no two queens attack each other. This means:
+
+No two queens are on the same row
+
+No two queens are on the same column
+
+No two queens are on the same diagonal
+
+Steps:
+
+1.Start from the first row (row 0).
+
+2.Try placing a queen in each column one by one.
+
+3.For each placement, check if it's safe (no other queen in the same column or diagonals).
+
+4.If safe, place the queen and move to the next row.
+
+5.If you reach the last row and place a queen successfully, you found a solution.
+
+6.If stuck, backtrack to the previous row and try the next column.
+
+Time Complexity: Worst case: O(N!) (since you try N columns for each of N rows). But with pruning (safety checks), it is much faster in practice.
+
+
+## Graph Coloring Problem
+
+The goal is to assign colors to the vertices of a graph such that no two adjacent vertices share the same color, using at most m colors.
+
+ Steps:
+ 
+1.Start with the first vertex (index 0).
+
+2.For each vertex, try assigning a color from 1 to m.
+
+3.Before assigning, check if the color is safe (i.e., none of its adjacent vertices have the same color).
+
+4.If it's safe, assign the color and move to the next vertex.
+
+5.If a valid color assignment leads to a complete coloring, store/print the solution.
+
+6.If stuck, backtrack and try another color.
+
+Time Complexity: In the worst case, it is O(mⁿ), where n is the number of vertices and m is the number of colors. But backtracking prunes many invalid colorings early.
